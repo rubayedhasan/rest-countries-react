@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card-container {
+  gap: 15px;
+  display: grid;
+  margin-top: 15px;
+  grid-template-columns: repeat(4, 1fr);
+}
