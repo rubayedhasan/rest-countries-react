@@ -1,7 +1,8 @@
-export default function Country() {
+export default function Country({ country }) {
+  console.log(country);
   return (
     <>
-      <p>I'm from Country</p>
+      <p></p>
     </>
   );
 }
