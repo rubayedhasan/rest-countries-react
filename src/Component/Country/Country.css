@@ -8,7 +8,8 @@
   padding: 15px;
   border-radius: 15px;
   border: 1px solid black;
-  background-color: rgba(127, 255, 212, 0.152);
+  /* background-color: rgba(127, 255, 212, 0.152); */
+  background-color: rgba(183, 248, 226, 0.152);
 }
 
 .card-img {
@@ -21,4 +22,19 @@
   width: 250px;
   height: 130px;
   object-fit: contain;
+}
+
+.btn-container {
+  gap: 15px;
+  display: flex;
+  margin-top: 10px;
+}
+
+.btn-visit {
+  width: 100px;
+  color: brown;
+  padding: 6px 10px;
+  border: 1.5px inset teal;
+  border-radius: 10px;
+  background-color: rgba(240, 255, 255, 0.819);
 }
