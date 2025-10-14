@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Country.css";
-export default function Country({ country }) {
+export default function Country({ country, handleCountryList }) {
   const { flags, name, languages, population } = country;
 
   const [status, setStatus] = useState(false);
@@ -25,20 +25,32 @@ export default function Country({ country }) {
           <button onClick={handleStatusBtn} className="btn-visit" type="button">
             {status ? "Visited" : "Go on..."}
           </button>
-          <p
-            style={{
-              color: "brown",
-              display: status ? "block" : "none",
-              backgroundColor: "rgba(240, 255, 255, 0.819)",
-              border: "0.8px inset teal",
-              borderRadius: "5px",
-              padding: "6px",
-              fontSize: "14px",
+
+          <button
+            onClick={() => {
+              handleCountryList(country);
             }}
+            className="btn-add-list"
+            type="button"
           >
-            Country has visited
-          </p>
+            Add to List
+          </button>
         </div>
+        <p
+          style={{
+            color: "brown",
+            textAlign: "center",
+            margin: "10px auto 0",
+            display: status ? "block" : "none",
+            backgroundColor: "rgba(240, 255, 255, 0.819)",
+            border: "0.8px inset teal",
+            borderRadius: "5px",
+            padding: "6px",
+            fontSize: "14px",
+          }}
+        >
+          Country has visited
+        </p>
       </div>
     </>
   );

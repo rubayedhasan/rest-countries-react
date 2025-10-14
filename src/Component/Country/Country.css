@@ -30,7 +30,8 @@
   margin-top: 10px;
 }
 
-.btn-visit {
+.btn-visit,
+.btn-add-list {
   width: 100px;
   color: brown;
   padding: 6px 10px;
