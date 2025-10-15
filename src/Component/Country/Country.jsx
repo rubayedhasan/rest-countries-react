@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Country.css";
 export default function Country({ country, handleCountryList }) {
-  const { flags, name, languages, population } = country;
+  const { flags, cca3, name, languages, population } = country;
 
   const [status, setStatus] = useState(false);
 
@@ -15,10 +15,10 @@ export default function Country({ country, handleCountryList }) {
         className="card"
       >
         <figure className="card-img">
-          <img src={flags.png} alt="" />
+          <img src={flags?.png} alt={flags?.alt} />
         </figure>
         <h1>{name.common}</h1>
-        <p>Language: {languages.lit}</p>
+        <p>Language: {languages?.lit}</p>
         <p>Population: {population}</p>
 
         <div className="btn-container">
@@ -27,10 +27,16 @@ export default function Country({ country, handleCountryList }) {
           </button>
 
           <button
+            id={`btn-${cca3}`}
             onClick={() => {
+              document.getElementById(`btn-${cca3}`).style.backgroundColor =
+                "#81c1bd82";
               handleCountryList(country);
             }}
             className="btn-add-list"
+            style={{
+              display: status ? "inline" : "none",
+            }}
             type="button"
           >
             Add to List

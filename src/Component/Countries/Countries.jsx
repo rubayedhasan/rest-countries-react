@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Country from "../Country/Country";
+import Country from "../Country/Country.jsx";
 
 import "./Countries.css";
 
@@ -17,7 +17,9 @@ export default function Countries() {
   // }, []);
 
   // using async/await
-  useEffect(() => fetchData, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const fetchData = async () => {
     const response = await fetch(
@@ -39,9 +41,9 @@ export default function Countries() {
           <h3 className="list-title">Visited Country List</h3>
           <ul className="country-list-item-container">
             {countryList.map((country) => (
-              <li className="country-list-item" key={country.cca3}>
-                <img src={country.flags.png} alt={country.flags.alt} />
-                <h6>{country.name.official}</h6>
+              <li className="country-list-item" key={country?.cca3}>
+                <img src={country.flags?.png} alt={country?.flags?.alt} />
+                <h6>{country?.name?.official}</h6>
               </li>
             ))}
           </ul>
@@ -50,7 +52,7 @@ export default function Countries() {
         <div className="card-container">
           {countries.map((country) => (
             <Country
-              key={country.cca3}
+              key={country?.cca3}
               country={country}
               handleCountryList={handleCountryList}
             ></Country>
